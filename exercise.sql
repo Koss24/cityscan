@@ -19,6 +19,7 @@ SET row_security = off;
 --
 -- Name: log_change(); Type: FUNCTION; Schema: public; Owner: postgres
 --
+CREATE DATABASE exercise;
 
 CREATE FUNCTION public.log_change() RETURNS trigger
     LANGUAGE plpgsql

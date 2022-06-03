@@ -1,9 +1,19 @@
-serverpassword: test123
-postgres user pass: test123
+app.py is a flask app with some basic front end it is not all complete update and insert DO NOT WORK
+to get these to work I was thinking of using a simple form to just insert data and then insert/update database 
 
-the json file is an export of my postgres server you should be able to import it into pgadmin
+the audit table is on a trigger so each time the road_netowrk table is UPDATED, DELETED, INSERT the info will be added to the auditlog
+
+HOW TO RUN:
+
+1. in postgres you can use /i PATH TO: exercise.sql to create the database that includes the road_netowrk and audit log
+
+2. in app.py you need to enter the password and database name you are using (default database name is exercise unless changed in exercise.sql) 
+
+3. python -m pip install -r .\requirements.txt (pip install all packages)
+    - Best to create a virtual environment
+
+4. run main.py
 
 
-Insert and Update has no logic only Delete is working
-To test I manually queried the database and inserted values
-the database named cityscan was a test run I used exercise for the flask app
+
+

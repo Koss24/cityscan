@@ -4,8 +4,11 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import psycopg2
 
+datbaseName = 'postgres'
+Password = "Password"
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:test123@localhost/exercise'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{datbaseName}:{Password}@localhost/postgres'
 db = SQLAlchemy(app)
 
 
@@ -36,7 +39,7 @@ def index():
 @app.route("/audit")
 def get_audit():
     conn = psycopg2.connect(
-        database="exercise", user='postgres', password='test123', host='localhost', port= '5432'
+        database=f"{datbaseName}", user='postgres', password=f'{Password}', host='localhost', port= '5432'
     )
     cursor = conn.cursor()
     cursor.execute("""SELECT * FROM audit""")
