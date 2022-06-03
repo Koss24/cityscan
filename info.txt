@@ -1,0 +1,9 @@
+serverpassword: test123
+postgres user pass: test123
+
+the json file is an export of my postgres server you should be able to import it into pgadmin
+
+
+Insert and Update has no logic only Delete is working
+To test I manually queried the database and inserted values
+the database named cityscan was a test run I used exercise for the flask app
